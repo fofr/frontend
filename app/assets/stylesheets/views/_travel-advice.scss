@@ -92,14 +92,9 @@
         list-style: none;
         padding-left: 0;
 
-        @include media(mobile) {
-          margin-left: 0;
-        }
-
         .meta{
-          @include core-16;
+          @include govuk-font(16);
           color: $grey-1;
-
         }
       }
     }
@@ -107,8 +102,7 @@
     #country-filter {
       h1 {
         @include inline-block;
-        @include core-27;
-        font-weight: 600;
+        @include govuk-font(27, $weight: bold);
         margin: 0 0 0.4em 0;
 
         @include ie-lte(7) {
@@ -121,7 +115,7 @@
       }
 
       form {
-        @include core-19;
+        @include govuk-font(19);
 
         display: none;
         margin: 0 0 1em 0;
@@ -151,7 +145,7 @@
     color: $secondary-text-colour;
 
     li {
-      @include core-16;
+      @include govuk-font(16);
 
       list-style: none;
       padding: 0;
@@ -160,8 +154,7 @@
         width: 7em;
       }
       p {
-        @include core-16;
-        // margin-top: 0.5em;
+        @include govuk-font(16);
       }
     }
   }
@@ -173,7 +166,7 @@
 
  .subscriptions  {
 
-    @include media(desktop){
+    @include govuk-media-query($from: desktop) {
       ul li:first-child {
         margin-right: 0;
         margin-left: 0;
@@ -187,7 +180,6 @@
     }
 
     @include media-down(tablet) {
-      // float: none;
       text-align: left;
       width: auto;
       padding-top: 0;
@@ -238,64 +230,10 @@
     }
   }
 
-
-  aside {
-    .page-navigation {
-
-      li {
-        list-style:none;
-        margin-left: 0;
-      }
-
-      @include media(mobile) {
-        li,
-        ol[start] li,
-        li a,
-        li span {
-          margin-left: 0;
-        }
-
-        li.active {
-          border-top: solid 1px #a1acb2;
-          margin: 0;
-          padding: 1em;
-        }
-
-        li a {
-          padding-left: 1em;
-        }
-
-        li span {
-          display: block;
-          padding: 0;
-          border-top: none;
-        }
-      }
-    }
-    .subscriptions  {
-      p {
-        @include core-19;
-        font-weight: 700;
-        margin: 0;
-        margin-right: 0.5em;
-
-      }
-
-      a {
-        @include core-19;
-        font-weight: 700;
-      }
-
-      padding-top: 2em;
-      clear: left;
-      float: none;
-      text-align: left;
-      width: auto;
-
-      @include media-down(mobile) {
-        padding-left: 1em;
-      }
-    }
+  .page-navigation {
+    border-bottom: 1px solid #bbb;
+    margin: 0 0 2.5em;
+    padding-bottom: 1em;
   }
 
   &#wrapper .article-container .subscriptions a:hover {
@@ -326,21 +264,19 @@
     }
 
     h1 {
-      @include core-19;
+      @include govuk-font(19);
       margin-top: 0;
     }
 
     p.country-count {
       margin: 0;
       span.js-filter-count {
-        @include core-80;
-        font-weight: 700;
+        @include govuk-font(80, $weight: bold);
       }
     }
 
     h2 {
-      @include core-80;
-      font-weight: 700;
+      @include govuk-font(80, $weight: bold);
       margin-top: 0.4em;
       padding-top: 0;
       margin-bottom: 0;
