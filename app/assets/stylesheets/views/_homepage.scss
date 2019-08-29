@@ -11,446 +11,194 @@ body.homepage {
   }
 }
 
-.root-index {
-  // Generic objects for the homepage
-  .inner-block {
-    @include govuk-media-query($from: tablet) {
-      margin: 0 30px;
-      &.floated-children {
-        margin: 0 15px;
-      }
-    }
+.homepage-top {
+  background: $homepage-top-colour;
+  color: $white;
+}
+
+.homepage-top__inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage-top__title {
+  @include govuk-font(48, $weight: bold);
+  padding: 25px 0 15px;
+}
+
+.homepage-top__intro {
+  margin: 0;
+}
+
+.homepage-top__intro--simpler {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.homepage-top__links {
+  padding: 0 govuk-spacing(6) govuk-spacing(4) govuk-spacing(3);
+
+  @include govuk-media-query($from: tablet) {
+    position: absolute;
+    top: 0;
+    right: -(govuk-spacing(3));
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 15px 20px 5px 20px;
+    margin-top: 30px;
+    min-height: 20em;
+    background: $black;
   }
+}
 
-  .floated-inner-block {
-    margin: 0 15px;
+.homepage-top__links-title {
+  @include govuk-font(14);
+  margin: 0;
+  @include govuk-media-query($from: desktop) {
+    margin: 5px 0 0;
   }
+}
 
-  section {
-    clear: both;
+.homepage-top__links-list {
+  margin: 0;
+  padding: 0;
+  @include govuk-media-query($from: desktop) {
+    margin: 10px 0 0;
   }
+}
 
-  hr {
-    margin: 30px 15px 15px;
-    clear: both;
-    border: 5px solid $black;
-    border-width: 5px 0 0;
+.homepage-top__links-item {
+  @include govuk-font($size: 16, $weight: bold);
+  list-style: none;
+  margin: 5px 0;
+}
 
-    @include govuk-media-query($from: tablet) {
-      margin: 60px 30px 30px;
-    }
-  }
-
-  .single-column-heading {
-    @include govuk-media-query($from: desktop) {
-      width: 33.33%;
-      float: left;
-    }
-    h2 {
-      @include govuk-font(36, $weight: bold);
-      padding: 0 15px;
-      margin: 0 0 10px;
-    }
-  }
-
-  .promo-image {
-    margin-right: 0;
-    margin-bottom: 30px;
-    min-height: 0;
-    position: static;
-
-    @include govuk-media-query($from: tablet) {
-      width: 33.33%;
-      float: left;
-    }
-    .promo-content {
-      padding: 0 15px;
-      > a {
-        display: block;
-      }
-    }
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 15px;
-    }
-    h3 {
-      @include govuk-font(24, $weight: bold);
-      margin: 5px 0;
-    }
-    p {
-      @include core-16;
-      margin: 0;
-    }
-
-    .promo-text-cta a {
-      display: block;
-      margin-bottom: 15px;
-      padding: 1.5em .75em 2em;
-
-      color: $white;
-      background: $homepage-top-colour;
-      text-align: center;
-      text-decoration: none;
-
-      @include govuk-font($size: 19, $weight: bold);
-
-      .main-text{
-        display: block;
-        margin-top: 15px;
-        @include govuk-font($size: 36, $weight: bold);
-      }
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-
-  .homepage-top {
-    @extend %contain-floats;
-    text-align: center;
-    background: $homepage-top-colour;
+.homepage-top__links-link {
+  &:link,
+  &:visited {
     color: $white;
-
-    .homepage-top-inner {
-      position: relative;
-      overflow: hidden;
-      max-width: 1020px;
-      margin: 0 auto;
-      text-align: left;
-      @include ie-lte(8){
-        width: 1020px;
-      }
-    }
   }
 
-  .welcome-block {
-    .welcome-text {
-      @include govuk-media-query($from: tablet) {
-        width: 66.66%;
-      }
-    }
-    .content-links {
-      @include govuk-media-query($from: tablet) {
-        position: absolute;
-        top: 0;
-        left: 66%;
-        width: 33.33%;
-      }
-    }
-
-    h1 {
-      @include govuk-font(48, $weight: bold);
-      padding: 25px 0 15px;
-    }
-    p {
-      margin: 0;
-
-      &.simpler {
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-    }
-
-    .content-links-inner {
-      padding-bottom: 20px;
-
-      @include govuk-media-query($from: tablet) {
-        background: $black;
-        padding: 15px 20px 5px;
-        margin-top: 30px;
-        min-height: 20em;
-        @include ie-lte(7){
-          margin-bottom: 0;
-        }
-        @include ie(6) {
-          height: 20em;
-        }
-      }
-
-      h2 {
-        @include govuk-font(14);
-        margin: 0;
-        @include govuk-media-query($from: desktop) {
-          margin: 5px 0 0;
-        }
-      }
-      ul {
-        margin: 0;
-        padding: 0;
-        @include govuk-media-query($from: desktop) {
-          margin: 10px 0 0;
-        }
-      }
-      li {
-        @include govuk-font($size: 16, $weight: bold);
-        list-style: none;
-        margin: 5px 0;
-      }
-      a {
-        &:link,
-        &:visited {
-          color: $white;
-        }
-
-        &:active,
-        &:hover {
-          color: darken($white, 20%);
-        }
-
-        &:focus {
-          // Manually fix the most embarassing :focus contast issue, needs a wider fix
-          color: $black;
-        }
-      }
-    }
-  }
-  .homepage-content {
-    @extend %contain-floats;
-    text-align: center;
-
-    .homepage-content-inner {
-      max-width: 1020px;
-      margin: 0 auto;
-      text-align: left;
-      @include ie-lte(8){
-        width: 1020px;
-      }
-    }
-  }
-  .services-block {
-    padding-top: 15px;
-    @include govuk-media-query($from: tablet) {
-      padding-top: 30px;
-    }
-
-    .two-column-heading {
-       @include govuk-media-query($from: tablet) {
-        width: 66.66%;
-        float: left;
-      }
-      h2 {
-        @include govuk-font(36, $weight: bold);
-        padding: 0 15px;
-        margin: 20px 0 0;
-        @include govuk-media-query($from: tablet) {
-          margin: 15px 0 25px;
-        }
-      }
-    }
-    .replaces {
-      @extend %contain-floats;
-
-      @include govuk-media-query($from: tablet) {
-        padding-top: 10px;
-        width: 33.33%;
-        float: right;
-      }
-      p {
-        @include govuk-font(14);
-        padding: 0 15px;
-        margin: 0;
-        color: $secondary-text-colour;
-      }
-      ul {
-        margin: 0;
-        padding: 0 15px;
-      }
-      li {
-        line-height: 30px;
-        display: block;
-        float: left;
-        padding-right: 10px;
-        img {
-          vertical-align: bottom;
-        }
-      }
-    }
-    .categories-lists {
-      @extend %contain-floats;
-      clear: both;
-    }
-    .categories-list {
-      margin: 0;
-      padding: 10px 0 0;
-      @include govuk-media-query($from: tablet) {
-        float: left;
-        width: $one-third;
-      }
-
-      li {
-        margin: 0 0 15px;
-        padding: 0;
-        list-style: none;
-
-        h3, p {
-          margin: 0;
-          padding: 0 15px;
-        }
-        h3 {
-          @include govuk-font(19, $weight: bold);
-        }
-        p {
-          @include govuk-font(16);
-          min-height: 40px;
-        }
-      }
-    }
+  &:active,
+  &:hover {
+    color: darken($white, 20%);
   }
 
-  .departments-and-policy {
-    .departments-intro {
-      @include govuk-media-query($from: desktop) {
-        width: 66.66%;
-        float: left;
-      }
-      p {
-        @include govuk-font(24);
-        margin: 10px 0 20px;
-      }
-    }
-    .large-numbers {
-      clear: both;
-      @extend %contain-floats;
-      @include govuk-media-query($from: tablet) {
-        padding: 0 0 30px 0;
-        float: left;
-        width: 33.33%;
-      }
+  &:focus,
+  &:link:focus {
+    // Manually fix the most embarassing :focus contast issue, needs a wider fix
+    color: $black;
+    text-decoration: none;
+  }
+}
 
-      ol {
-        margin: 0;
-        padding: 0;
-        @include ie-lte(7){
-          width: 988px; // because 990px/4 is not a round number
-        }
-      }
-      li {
-        list-style: none;
-        margin: 20px 0;
-
-        a {
-          padding: 0 15px;
-          display: block;
-          text-decoration: none;
-          line-height: 1.25;
-          overflow: hidden;
-        }
-        strong {
-          // Manually setting font-size rather than using the mixins size so we
-          // because the layout doesnt really work otherwise
-          font-size: 53px;
-          line-height: (55 / 53);
-          font-weight: bold;
-          display: block;
-
-          @include govuk-media-query($from: desktop) {
-            font-size: 80px;
-            line-height: (80 / 80);
-          }
-        }
-        &:first-child {
-          margin-top: 10px;
-        }
-      }
-    }
-    
-    .large-numbers__list {
-      padding-left: 0;
-    }
-
-    .departments-promo-sections {
-      @extend %contain-floats;
-      clear: both;
-      padding: 0;
-    }
+.services-block {
+  padding-top: 15px;
+  @include govuk-media-query($from: tablet) {
+    padding-top: 30px;
   }
 
-  .popular-content {
-    @extend %contain-floats;
-    margin-bottom: 60px;
-
-    .promo-image {
-      @include govuk-media-query($from: tablet) {
-        width: 50%;
-      }
-      @include govuk-media-query($from: desktop) {
-        width: 33.33%;
-      }
-
-      a.callout {
-        display: block;
-        background-color: $turquoise;
-        color: $white;
-        font-weight: bold;
-        text-decoration: none;
-        text-align: center;
-        margin-bottom: 15px;
-
-
-        p {
-          @include core-16;
-          font-weight:700;
-          padding-top: 1.25em;
-          padding-bottom: 1.25em;
-          margin-left: 2em;
-          margin-right: 2em;
-        }
-
-        span {
-          @include heading-48;
-          font-weight:700;
-          display: block;
-          margin: 0.25em 0 0.25em 0;
-          padding:0;
-
-          &:hover {
-            text-decoration: underline;
-          }
-
-          @include media(desktop) {
-            @include core-36;
-            font-weight:700;
-            margin:0;
-          }
-        }
-      }
-    }
-
-
-    .most-active {
-      @include govuk-media-query($from: tablet) {
-        width: 50%;
-        float: left;
-      }
-      @include govuk-media-query($from: desktop) {
-        width: 33.33%;
-      }
-      h3 {
-        @include govuk-font(24, $weight: bold);
-        margin: 0;
-        padding: 0 0 5px;
-      }
-      .most-active-content {
-        margin: 0;
-        padding: 0 0 15px;
-      }
-      li {
-        list-style: none;
-        margin: 0;
-        padding: 5px 0 0;
-        @include govuk-font(19);
-        a {
-          font-weight: bold;
-        }
-        span {
-          display: inline-block;
-          min-width: 25px;
-        }
-      }
-    }
+  .govuk-list {
+    padding-top: govuk-spacing(2);
   }
+}
+
+.services-block__heading {
+  @include govuk-font(19, $weight: bold);
+  margin: 0;
+}
+
+.services-block__para {
+  @include govuk-font(16);
+  margin: 0 0 govuk-spacing(3) 0;
+  min-height: 40px;
+}
+
+.homepage-divider {
+  margin: 30px 0 15px 0;
+  clear: both;
+  border: 5px solid $black;
+  border-width: 5px 0 0;
+
+  @include govuk-media-query($from: tablet) {
+    margin: 60px 0 30px 0;
+  }
+}
+
+.homepage-numbers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.homepage-numbers__link {
+  display: block;
+  margin: 20px 0;
+  text-decoration: none;
+  line-height: 1.25;
+  overflow: hidden;
+}
+
+.homepage-numbers__large {
+  // Manually setting font-size rather than using the mixins size
+  // because the layout doesnt really work otherwise
+  font-size: 53px;
+  line-height: (55 / 53);
+  font-weight: bold;
+  display: block;
+
+  @include govuk-media-query($from: desktop) {
+    font-size: 80px;
+    line-height: (80 / 80);
+  }
+}
+
+.homepage-info {
+  @include govuk-font(24);
+  margin: govuk-spacing(2) 0 govuk-spacing(4);
+}
+
+.homepage-promo {
+  display: block;
+  margin-bottom: govuk-spacing(4);
+}
+
+.homepage-promo__image {
+  display: block;
+  max-width: 100%;
+  margin-bottom: govuk-spacing(4);
+}
+
+.homepage-promo__title {
+  @include govuk-font(24, $weight: bold);
+}
+
+.homepage-promo__text {
+  @include govuk-font(16);
+}
+
+.homepage-more__title {
+  @include govuk-font(36, $weight: bold);
+  margin: 0 0 govuk-spacing(4) 0;
+}
+
+.homepage-more__subtitle {
+  @include govuk-font(24, $weight: bold);
+  margin: 0 0 govuk-spacing(2) 0;
+}
+
+.homepage-more__list {
+  font-weight: bold;
+}
+
+.homepage-promo__link {
+  display: block;
+  padding: 2.5em .75em;
+  background: $govuk-brand-colour;
+  text-align: center;
+}
+
+.homepage-promo__link-content {
+  @include govuk-font(36, $weight: bold);
+  color: govuk-colour("white");
 }
