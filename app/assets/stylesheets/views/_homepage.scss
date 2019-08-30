@@ -125,6 +125,12 @@ body.homepage {
   }
 }
 
+.homepage-numbers-and-info {
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: govuk-spacing(6);
+  }
+}
+
 .homepage-numbers {
   margin: 0;
   padding: 0;
@@ -137,6 +143,10 @@ body.homepage {
   text-decoration: none;
   line-height: 1.25;
   overflow: hidden;
+}
+
+.homepage-numbers__link--first {
+  margin-top: 10px;
 }
 
 .homepage-numbers__large {
@@ -160,7 +170,6 @@ body.homepage {
 
 .homepage-promo {
   display: block;
-  margin-bottom: govuk-spacing(4);
 }
 
 .homepage-promo__image {
@@ -175,6 +184,7 @@ body.homepage {
 
 .homepage-promo__text {
   @include govuk-font(16);
+  margin: 0 0 govuk-spacing(4);
 }
 
 .homepage-more__title {
